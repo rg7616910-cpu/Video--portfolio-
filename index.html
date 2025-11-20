@@ -1,247 +1,147 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>YOUR NAME — Video Editing Portfolio</title>
-  <meta name="description" content="Showreel and projects by YOUR NAME — Video Editor" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Editor Portfolio</title>
   <style>
-    :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed; --glass: rgba(255,255,255,0.04);
-      --radius:16px; --maxw:1100px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;background:linear-gradient(180deg,#071023 0%, #071a2a 60%);color:#e6eef8;line-height:1.4;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:40px 20px;
+    header {
+      height: 95vh;
+      background: url('hero-video-placeholder.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    .wrap{width:100%;max-width:var(--maxw)}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:800;color:white;font-size:18px;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
-    h1{margin:0;font-size:20px}
-    p.lead{margin:0;color:var(--muted);font-size:13px}
-    nav{display:flex;gap:12px;align-items:center}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:10px;color:var(--muted);font-weight:600;font-size:13px;text-decoration:none}
-    .btn.primary{background:linear-gradient(90deg,var(--accent),#06b6d4);border:0;color:white;box-shadow:0 8px 30px rgba(124,58,237,0.12)}/* Hero */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start;margin-bottom:28px}
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:var(--radius);backdrop-filter:blur(6px);box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
-
-.intro h2{margin:0;font-size:28px}
-.meta{color:var(--muted);margin-top:8px}
-.cta{display:flex;gap:12px;margin-top:18px}
-
-/* Showreel card */
-.player{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden}
-.player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-
-/* Projects grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
-.project{display:flex;flex-direction:column;gap:12px}
-.thumb{height:150px;border-radius:12px;overflow:hidden;position:relative;cursor:pointer}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(1);transition:transform .4s ease}
-.thumb:hover img{transform:scale(1.04)}
-.proj-info{display:flex;justify-content:space-between;align-items:center}
-.proj-title{font-weight:700}
-.proj-role{color:var(--muted);font-size:13px}
-
-/* Reveal animations */
-.reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:none}
-
-/* Modal */
-.modal{position:fixed;inset:0;background:rgba(2,6,23,0.7);display:flex;align-items:center;justify-content:center;z-index:60;opacity:0;pointer-events:none;transition:opacity .2s ease}
-.modal.open{opacity:1;pointer-events:auto}
-.modal .box{width:min(900px,95%);background:var(--card);padding:12px;border-radius:12px}
-.modal .close{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;background:var(--glass);border:1px solid rgba(255,255,255,0.03);cursor:pointer}
-
-/* Footer */
-footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .player{height:240px;padding-top:0}
-  .player iframe{position:relative;height:100%}
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }section {
+  padding: 60px 40px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-  </style>
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.contact {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+a.button {
+  background: white;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card {background:#1a1a1a;padding:20px;border-radius:12px;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
+
+.project-card.show {opacity:1;transform:translateY(0);}
+html {scroll-behavior:smooth;} </style>
+
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">YT</div>
-        <div>
-          <h1 id="name">YOUR NAME</h1>
-          <p class="lead">Video Editor — Showreel & Projects</p>
-        </div>
-      </div>
-      <nav>
-        <a class="btn" href="#projects">Projects</a>
-        <a class="btn" href="#contact">Contact</a>
-        <a class="btn primary" id="githubLink" href="#" target="_blank">View on GitHub</a>
-      </nav>
-    </header><section class="hero">
-  <div class="card intro reveal" data-reveal>
-    <h2>Hi — I'm <span style="color:var(--accent)" id="heroName">YOUR NAME</span></h2>
-    <p class="meta">Beginner-friendly editor focusing on travel, memories, and short cinematic edits. Built with smooth cuts, color warmth, and simple storytelling.</p>
-
-    <div class="cta">
-      <a class="btn primary" id="watchAllBtn">Watch Showreel</a>
-      <a class="btn" href="#projects">See Projects</a>
+  <header>
+    <div>
+      <h1>Your Name — Video Editor</h1>
+      <p>Crafting emotion through rhythm, pacing, colour, and sound. I bring stories to life through cinematic, impactful editing.</p>
     </div>
-
-    <div style="margin-top:18px;color:var(--muted);font-size:13px">
-      <strong>Tools:</strong> DaVinci Resolve • CapCut • Canva
-    </div>
-
-    <div style="margin-top:18px">
-      <h3 style="margin:0 0 8px 0">Quick bio</h3>
-      <p style="margin:0;color:var(--muted)">I'm a beginner video editor building a portfolio from campus, travel, and friends' footage. I like warm color grades and smooth transitions.</p>
-    </div>
+  </header>  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a video editor specializing in cinematic edits, music videos, brand content, and storytelling-driven visuals. 
+      Inspired by filmmakers like [Your Influences], my work focuses on emotional pacing and clean visual rhythm.
+    </p>
+  </section>  <section id="work">
+    <h2>Featured Work</h2>
+    <div class="grid">
+      <div class="project-card">
+        <iframe src="https://drive.google.com/file/d/1Hjx0QpSGO9gK_RhNulrSbYM5b7Zpww32/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h3>Into the Heart of Sakleshpur</h3>
+        <p>This video captures the raw beauty of trekking deep inside the dense forests of Sakleshpur. The journey takes viewers through thick green trails, shifting light patterns, and rich textures of untouched wilderness — all leading to a breathtaking hidden waterfall. The changing weather and challenging path add a sense of thrill and adventure to the visual story.</p>
+        <p><strong>Inspiration:</strong> The energy of the forest, the unpredictable weather, and the excitement of discovering a crazy, powerful waterfall at the end inspired me to transform this trek into a cinematic experience. I wanted viewers to feel the same mix of difficulty, beauty, and adrenaline that we felt during this journey.</p>
+        <p><strong>Techniques:</strong> Handheld motion shots for realism, color grading to enhance the deep greens of the forest, dynamic pacing to reflect the trek’s intensity, and sound design to highlight both the silence of the woods and the roar of the waterfall.</p>
+    </div><div class="project-card">
+    <iframe src="https://drive.google.com/file/d/1NdIUdaLy7IphVDj2C7Fmtm5n8VxJXqXS/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>Memories on the Road</h3>
+    <p>This video is a warm collection of travel moments with friends — the laughter, the random stops, the beautiful places, and the little memories that make trips unforgettable. It captures the joy of exploring new locations while keeping the bond of friendship at the heart of every frame.</p>
+    <p><strong>Inspiration:</strong> I’ve always loved capturing real moments during travel. Being with friends, discovering new places, and recording those priceless memories inspired me to turn this journey into a heartfelt visual story.</p>
+    <p><strong>Techniques:</strong> Natural color tones, candid handheld shots for authenticity, smooth transitions for emotional flow, and music that enhances the nostalgic mood.</p>
+        <div class="project-card">
+    <iframe src="https://drive.google.com/file/d/1SdnAnesiSLn38c3UQQYqNHe8V6SERzg1/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>Bangalore University — Art & Nature</h3>
+    <p>This video explores the peaceful and creative environment of Bangalore University, highlighting its beautiful blend of nature, architecture, and vibrant campus life. From artistic structures to lush greenery, each shot captures the charm and calmness of the space.</p>
+    <p><strong>Inspiration:</strong> The combination of natural beauty and artistic expression around the campus inspired me to document the vibe of Bangalore University. I wanted to showcase how art and nature coexist, creating a visually soothing experience.</p>
+    <p><strong>Techniques:</strong> Clean handheld shots, soft colour grading, smooth pans, and a calm pacing to reflect the peaceful surroundings.</p>
   </div>
-
-  <aside class="card reveal" data-reveal>
-    <h3 style="margin-top:0">Showreel</h3>
-    <div class="player" id="player">
-      <!-- REPLACE the src below with your showreel YouTube or Vimeo embed URL -->
-      <iframe id="showreelIframe" src="https://www.youtube.com/embed/REPLACE_SHOWREEL_ID?rel=0&modestbranding=1" title="Showreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p style="margin-top:12px;color:var(--muted);font-size:13px">Tip: replace the iframe src with <strong>your</strong> showreel link (YouTube unlisted works great).</p>
-  </aside>
-</section>
-
-<section id="projects">
-  <h2 style="margin:8px 0 12px 0">Projects</h2>
-  <div class="grid">
-    <!-- Project card template: copy and paste to add more -->
-
-    <article class="card project reveal" data-reveal>
-      <div class="thumb" data-video="https://www.youtube.com/watch?v=REPLACE_VIDEO1">
-        <!-- Replace the img src with your thumbnail image URL -->
-        <img src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
-      </div>
-      <div class="proj-info">
-        <div>
-          <div class="proj-title">Bangalore University — Campus</div>
-          <div class="proj-role">Editor — 0:25</div>
-        </div>
-        <div style="text-align:right;color:var(--muted);font-size:13px">TOOLS: DaVinci</div>
-      </div>
-      <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">Short campus montage highlighting art and greenery — kept minimal as requested.</p>
-    </article>
-
-    <article class="card project reveal" data-reveal>
-      <div class="thumb" data-video="https://www.youtube.com/watch?v=REPLACE_VIDEO2">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
-      </div>
-      <div class="proj-info">
-        <div>
-          <div class="proj-title">Memories — Friends</div>
-          <div class="proj-role">Editor • Color — 0:45</div>
-        </div>
-        <div style="text-align:right;color:var(--muted);font-size:13px">TOOLS: CapCut</div>
-      </div>
-      <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">A nostalgic montage of candid moments with friends. Warm grade and synced cuts.</p>
-    </article>
-
-    <article class="card project reveal" data-reveal>
-      <div class="thumb" data-video="https://www.youtube.com/watch?v=REPLACE_VIDEO3">
-        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
-      </div>
-      <div class="proj-info">
-        <div>
-          <div class="proj-title">Kerala Nature</div>
-          <div class="proj-role">Editor — 0:35</div>
-        </div>
-        <div style="text-align:right;color:var(--muted);font-size:13px">TOOLS: Resolve</div>
-      </div>
-      <p style="margin:8px 0 0 0;color:var(--muted);font-size:13px">Slow scenic shots with longer holds and gentle crossfades.</p>
-    </article>
-
+      <div class="project-card">
+    <iframe src="https://drive.google.com/file/d/1hQtavMAuHrhlr0bDJIQnUwC9yiNBe4_y/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>Travel Moments</h3>
+    <p>A simple and clean visual capture of the moment.</p>
   </div>
+      <div class="project-card">
+    <iframe src="https://drive.google.com/file/d/1CIDypQsEKT98b57qjYwklkoHR0IPKXNG/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <h3>Kerala Memories</h3>
+    <p>A warm collection of moments with friends, captured alongside the natural beauty of Kerala.</p>
+  </div>
+</div>
 
-</section>
-
-<div style="height:20px"></div>
-
-<section id="contact" class="card reveal" data-reveal>
-  <h3 style="margin-top:0">Contact</h3>
-  <p style="margin:6px 0;color:var(--muted)">Email: <a id="contactEmail" href="mailto:your.email@example.com">your.email@example.com</a> • Instagram: <a href="#" id="insta">@yourhandle</a></p>
-  <p style="margin:6px 0;color:var(--muted)">Want feedback? Send a link to your drafts and I’ll give short notes.</p>
-</section>
-
-<footer>
-  <p>Built with ♥ • Replace placeholders to personalize • <span id="year"></span></p>
-</footer>
-
-  </div>  <!-- Modal for playing project videos -->  <div id="modal" class="modal" aria-hidden="true">
-    <div class="box">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <div style="color:var(--muted);font-size:13px">Playing video</div>
-        <div class="close" id="closeModal" title="Close">✕</div>
-      </div>
-      <div style="position:relative;padding-top:56.25%">
-        <iframe id="modalIframe" src="" style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
-      </div>
-    </div>
-  </div>  <script>
-    // Small helpers: replace placeholders with your info programmatically if desired
-    const githubUsername = 'YOUR_GITHUB_USERNAME'; // <-- replace
-    const repoName = 'video-portfolio'; // <-- replace if you chose another repo name
-    document.getElementById('githubLink').href = `https://${githubUsername}.github.io/${repoName}/`;
-    document.getElementById('name').textContent = 'YOUR NAME';
-    document.getElementById('heroName').textContent = 'YOUR NAME';
-    document.getElementById('contactEmail').textContent = 'your.email@example.com';
-    document.getElementById('contactEmail').href = 'mailto:your.email@example.com';
-    document.getElementById('insta').href = '#';
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Reveal on scroll
-    const revealEls = document.querySelectorAll('[data-reveal]');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting) e.target.classList.add('visible');
-      })
-    },{threshold:0.12});
-    revealEls.forEach(el=>io.observe(el));
-
-    // Modal player logic
-    const modal = document.getElementById('modal');
-    const modalIframe = document.getElementById('modalIframe');
-    const closeModal = document.getElementById('closeModal');
-    document.querySelectorAll('.thumb').forEach(t=>{
-      t.addEventListener('click',()=>{
-        const v = t.getAttribute('data-video');
-        if(!v) return;
-        // Convert regular watch URL to embed if it's YouTube
-        let embed = v;
-        if(v.includes('watch?v=')) embed = v.replace('watch?v=','embed/');
-        // If it's a short share (youtu.be) also convert
-        if(v.includes('youtu.be/')) embed = v.replace('youtu.be/','youtube.com/embed/');
-        modalIframe.src = embed + '?autoplay=1&rel=0&modestbranding=1';
-        modal.classList.add('open');
-      })
+  </section>  <section id="inspiration">
+    <h2>What Inspires My Work</h2>
+    <p>
+      Whether it's the rhythmic storytelling of modern cinema or the raw energy of music videos, I draw inspiration from
+      bold visual language and emotional narrative flow. I aim to create edits that feel alive and deeply connected to the message.
+    </p>
+  </section>  <section id="process">
+    <h2>My Editing Process</h2>
+    <ul>
+      <li>Understanding vision & story</li>
+      <li>Rough cut layout</li>
+      <li>Rhythm & pacing refinement</li>
+      <li>Colour grading & sound design</li>
+      <li>Final master delivery</li>
+    </ul>
+  </section>  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p>Email: yourname@email.com</p>
+    <a class="button" href="mailto:yourname@email.com">Contact Me</a>
+  </section>
+<script>
+  const cards = document.querySelectorAll('.project-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('show');
     });
-    closeModal.addEventListener('click',()=>{ modal.classList.remove('open'); modalIframe.src = ''; });
-    modal.addEventListener('click',(e)=>{ if(e.target===modal) { modal.classList.remove('open'); modalIframe.src = ''; } });
+  }, { threshold: 0.1 });cards.forEach(card => observer.observe(card)); </script>
 
-    // Watch showreel button opens the iframe in modal for convenience
-    document.getElementById('watchAllBtn').addEventListener('click',()=>{
-      const show = document.getElementById('showreelIframe').src;
-      modalIframe.src = show + (show.includes('?')? '&autoplay=1':'?autoplay=1');
-      modal.classList.add('open');
-    });
-
-    // Accessibility: close modal with ESC
-    window.addEventListener('keydown',e=>{ if(e.key==='Escape'){ modal.classList.remove('open'); modalIframe.src=''; } });
-
-    // Helpful console notes for you
-    console.log('Portfolio loaded — remember to replace placeholders: YOUR_NAME, YOUR_GITHUB_USERNAME, repoName, showreel/video IDs, thumbnails, email.');
-  </script></body>
+</body>
 </html>
