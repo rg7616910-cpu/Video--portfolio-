@@ -2,146 +2,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Video Editor Portfolio</title>
+  <title>Gaurav R — Video Editor</title>
   <style>
+    /* Basic reset & typography */
+    :root{--bg:#0f0f0f;--card:#1a1a1a;--accent:#e6e6e6}
+    *{box-sizing:border-box}
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f0f;
-      color: #f5f5f5;
-    }
-    header {
-      height: 95vh;
-      background: url('hero-video-placeholder.jpg') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }section {
-  padding: 60px 40px;
-  max-width: 1100px;
-  margin: auto;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }header {
+  min-height:60vh;
+  background: url('hero-video-placeholder.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  position:relative;
+  overflow:hidden;
+}
+header::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.6));}
+header .inner{position:relative;z-index:2;max-width:900px}
+header h1{font-size:clamp(1.8rem,4vw,3rem);margin:0 0 8px}
+header p{font-size:clamp(1rem,2.2vw,1.1rem);margin:0 auto;max-width:700px}
+
+section{padding:48px 20px;max-width:1100px;margin:0 auto}
+h2{margin-top:0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.project-card{background:var(--card);padding:18px;border-radius:12px;opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,box-shadow .2s;box-shadow:0 6px 18px rgba(0,0,0,.5)}
+.project-card.show{opacity:1;transform:translateY(0)}
+.project-card:hover{box-shadow:0 18px 40px rgba(0,0,0,.6)}
+
+.project-card video,.project-card iframe{width:100%;height:220px;border-radius:8px;background:#000;display:block}
+.project-card h3{margin:12px 0 6px}
+.project-card p{margin:6px 0;color:#dcdcdc}
+
+.contact{text-align:center;padding:36px 20px}
+a.button{display:inline-block;background:#fff;color:#000;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600}
+
+footer{padding:24px 20px;text-align:center;color:#bdbdbd}
+
+/* Responsive */
+@media (max-width:700px){
+  .project-card video,.project-card iframe{height:180px}
+  header{min-height:45vh}
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
+/* Smooth scroll behaviour */
+html{scroll-behavior:smooth}
 
-.project-card {
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.project-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 12px;
-}
-
-.contact {
-  text-align: center;
-  padding-bottom: 80px;
-}
-
-a.button {
-  background: white;
-  color: black;
-  padding: 12px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.project-card {background:#1a1a1a;padding:20px;border-radius:12px;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease, transform 0.6s ease;}
-
-.project-card.show {opacity:1;transform:translateY(0);}
-html {scroll-behavior:smooth;} </style>
-
+  </style>
 </head>
 <body>
   <header>
-    <div>
-      <h1>Your Name — Video Editor</h1>
-      <p>Crafting emotion through rhythm, pacing, colour, and sound. I bring stories to life through cinematic, impactful editing.</p>
+    <div class="inner">
+      <h1>Gaurav R — Video Editor</h1>
+      <p>Story-driven edits: travel, nature & cinematic moments. Available for freelance & in‑house editing roles.</p>
+      <p style="margin-top:12px"><a class="button" href="#work">View Work</a></p>
     </div>
   </header>  <section id="about">
     <h2>About Me</h2>
-    <p>
-      I'm a video editor specializing in cinematic edits, music videos, brand content, and storytelling-driven visuals. 
-      Inspired by filmmakers like [Your Influences], my work focuses on emotional pacing and clean visual rhythm.
-    </p>
+    <p>I'm a beginner-level video editor focused on cinematic pacing, colour, and storytelling. I specialise in travel and nature cinematics and enjoy turning small moments into emotional stories.</p>
   </section>  <section id="work">
     <h2>Featured Work</h2>
-    <div class="grid">
-      <div class="project-card">
-        <iframe src="https://drive.google.com/file/d/1Hjx0QpSGO9gK_RhNulrSbYM5b7Zpww32/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <h3>Into the Heart of Sakleshpur</h3>
-        <p>This video captures the raw beauty of trekking deep inside the dense forests of Sakleshpur. The journey takes viewers through thick green trails, shifting light patterns, and rich textures of untouched wilderness — all leading to a breathtaking hidden waterfall. The changing weather and challenging path add a sense of thrill and adventure to the visual story.</p>
-        <p><strong>Inspiration:</strong> The energy of the forest, the unpredictable weather, and the excitement of discovering a crazy, powerful waterfall at the end inspired me to transform this trek into a cinematic experience. I wanted viewers to feel the same mix of difficulty, beauty, and adrenaline that we felt during this journey.</p>
-        <p><strong>Techniques:</strong> Handheld motion shots for realism, color grading to enhance the deep greens of the forest, dynamic pacing to reflect the trek’s intensity, and sound design to highlight both the silence of the woods and the roar of the waterfall.</p>
-    </div><div class="project-card">
-    <iframe src="https://drive.google.com/file/d/1NdIUdaLy7IphVDj2C7Fmtm5n8VxJXqXS/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="grid"><!-- Project 01: Sakleshpur (uses local asset if present, falls back to Drive iframe) -->
+  <article class="project-card" data-fallback-iframe="https://drive.google.com/file/d/1Hjx0QpSGO9gK_RhNulrSbYM5b7Zpww32/preview">
+    <video controls playsinline poster="assets/01_sakleshpur_thumb.jpg" preload="metadata">
+      <source src="assets/01_sakleshpur.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="https://drive.google.com/file/d/1Hjx0QpSGO9gK_RhNulrSbYM5b7Zpww32/view">View on Drive</a>
+    </video>
+    <h3>Into the Heart of Sakleshpur</h3>
+    <p>This video captures the raw beauty of trekking deep inside the dense forests of Sakleshpur — a journey through thick green trails that leads to a hidden waterfall.</p>
+    <p><strong>Techniques:</strong> Handheld motion, deep-green grade, dynamic pacing.</p>
+  </article>
+
+  <!-- Project 02: Memories on the Road -->
+  <article class="project-card" data-fallback-iframe="https://drive.google.com/file/d/1NdIUdaLy7IphVDj2C7Fmtm5n8VxJXqXS/preview">
+    <video controls playsinline poster="assets/02_memories_thumb.jpg" preload="metadata">
+      <source src="assets/02_memories.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="https://drive.google.com/file/d/1NdIUdaLy7IphVDj2C7Fmtm5n8VxJXqXS/view">View on Drive</a>
+    </video>
     <h3>Memories on the Road</h3>
-    <p>This video is a warm collection of travel moments with friends — the laughter, the random stops, the beautiful places, and the little memories that make trips unforgettable. It captures the joy of exploring new locations while keeping the bond of friendship at the heart of every frame.</p>
-    <p><strong>Inspiration:</strong> I’ve always loved capturing real moments during travel. Being with friends, discovering new places, and recording those priceless memories inspired me to turn this journey into a heartfelt visual story.</p>
-    <p><strong>Techniques:</strong> Natural color tones, candid handheld shots for authenticity, smooth transitions for emotional flow, and music that enhances the nostalgic mood.</p>
-        <div class="project-card">
-    <iframe src="https://drive.google.com/file/d/1SdnAnesiSLn38c3UQQYqNHe8V6SERzg1/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p>A warm collection of travel moments with friends — candid, nostalgic, and authentic.</p>
+    <p><strong>Techniques:</strong> Candid handheld shots, smooth transitions, natural colour tones.</p>
+  </article>
+
+  <!-- Project 03: Bangalore University -->
+  <article class="project-card" data-fallback-iframe="https://drive.google.com/file/d/1SdnAnesiSLn38c3UQQYqNHe8V6SERzg1/preview">
+    <video controls playsinline poster="assets/03_bu_thumb.jpg" preload="metadata">
+      <source src="assets/03_bu.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="https://drive.google.com/file/d/1SdnAnesiSLn38c3UQQYqNHe8V6SERzg1/view">View on Drive</a>
+    </video>
     <h3>Bangalore University — Art & Nature</h3>
-    <p>This video explores the peaceful and creative environment of Bangalore University, highlighting its beautiful blend of nature, architecture, and vibrant campus life. From artistic structures to lush greenery, each shot captures the charm and calmness of the space.</p>
-    <p><strong>Inspiration:</strong> The combination of natural beauty and artistic expression around the campus inspired me to document the vibe of Bangalore University. I wanted to showcase how art and nature coexist, creating a visually soothing experience.</p>
-    <p><strong>Techniques:</strong> Clean handheld shots, soft colour grading, smooth pans, and a calm pacing to reflect the peaceful surroundings.</p>
-  </div>
-      <div class="project-card">
-    <iframe src="https://drive.google.com/file/d/1hQtavMAuHrhlr0bDJIQnUwC9yiNBe4_y/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <p>Exploring the peaceful campus: architecture, greenery and everyday creative moments.</p>
+  </article>
+
+  <!-- Project 04: Travel Moments (simple entry) -->
+  <article class="project-card" data-fallback-iframe="https://drive.google.com/file/d/1hQtavMAuHrhlr0bDJIQnUwC9yiNBe4_y/preview">
+    <video controls playsinline poster="assets/04_travel_thumb.jpg" preload="metadata">
+      <source src="assets/04_travel.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="https://drive.google.com/file/d/1hQtavMAuHrhlr0bDJIQnUwC9yiNBe4_y/view">View on Drive</a>
+    </video>
     <h3>Travel Moments</h3>
     <p>A simple and clean visual capture of the moment.</p>
-  </div>
-      <div class="project-card">
-    <iframe src="https://drive.google.com/file/d/1CIDypQsEKT98b57qjYwklkoHR0IPKXNG/preview" width="100%" height="250" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </article>
+
+  <!-- Project 05: Kerala Memories -->
+  <article class="project-card" data-fallback-iframe="https://drive.google.com/file/d/1CIDypQsEKT98b57qjYwklkoHR0IPKXNG/preview">
+    <video controls playsinline poster="assets/05_kerala_thumb.jpg" preload="metadata">
+      <source src="assets/05_kerala.mp4" type="video/mp4">
+      Your browser does not support the video tag. <a href="https://drive.google.com/file/d/1CIDypQsEKT98b57qjYwklkoHR0IPKXNG/view">View on Drive</a>
+    </video>
     <h3>Kerala Memories</h3>
-    <p>A warm collection of moments with friends, captured alongside the natural beauty of Kerala.</p>
-  </div>
+    <p>A warm collection of moments with friends, captured alongside Kerala’s natural beauty.</p>
+  </article>
+
 </div>
 
   </section>  <section id="inspiration">
     <h2>What Inspires My Work</h2>
-    <p>
-      Whether it's the rhythmic storytelling of modern cinema or the raw energy of music videos, I draw inspiration from
-      bold visual language and emotional narrative flow. I aim to create edits that feel alive and deeply connected to the message.
-    </p>
+    <p>I draw inspiration from natural light, travel experiences, and the subtle human moments between big events — my edits emphasize rhythm and emotional beats.</p>
   </section>  <section id="process">
     <h2>My Editing Process</h2>
     <ul>
-      <li>Understanding vision & story</li>
-      <li>Rough cut layout</li>
-      <li>Rhythm & pacing refinement</li>
-      <li>Colour grading & sound design</li>
+      <li>Understand the story</li>
+      <li>Rough cut & rhythm</li>
+      <li>Refinement: pacing, transitions</li>
+      <li>Colour grade & sound design</li>
       <li>Final master delivery</li>
     </ul>
   </section>  <section class="contact">
     <h2>Get in Touch</h2>
-    <p>Email: yourname@email.com</p>
-    <a class="button" href="mailto:yourname@email.com">Contact Me</a>
-  </section>
-<script>
-  const cards = document.querySelectorAll('.project-card');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('show');
-    });
-  }, { threshold: 0.1 });cards.forEach(card => observer.observe(card)); </script>
+    <p>Email: gaurav.r@example.com</p>
+    <p><a class="button" href="mailto:gaurav.r@example.com">Contact Me</a></p>
+  </section>  <footer>
+    <p>Prepared for GitHub Pages. To publish: create a repo, add these files and enable Pages (see README).</p>
+  </footer>  <!-- Scripts: intersection observer for reveal + fallback for Drive if video fails -->  <script>
+    // reveal on scroll
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(card => observer.observe(card));
 
-</body>
+    // for each card, if the <video> errors (missing local asset), show a Drive iframe fallback
+    cards.forEach(card => {
+      const video = card.querySelector('video');
+      const fallback = card.getAttribute('data-fallback-iframe');
+      if (!video) return;
+      video.addEventListener('error', () => {
+        // create iframe and replace the video element
+        const iframe = document.createElement('iframe');
+        iframe.src = fallback;
+        iframe.width = '100%';
+        iframe.height = '250';
+        iframe.frameBorder = 0;
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        video.replaceWith(iframe);
+      });
+
+      // also if video can't play (no sources), the 'loadedmetadata' won't fire; check size after short timeout
+      setTimeout(() => {
+        const src = video.querySelector('source')?.src || '';
+        if (!src.includes('assets/')) {
+          // assume no local asset provided — show iframe
+          const iframe = document.createElement('iframe');
+          iframe.src = fallback;
+          iframe.width = '100%';
+          iframe.height = '250';
+          iframe.frameBorder = 0;
+          iframe.allow = 'autoplay; encrypted-media';
+          iframe.allowFullscreen = true;
+          video.replaceWith(iframe);
+        }
+      }, 300);
+    });
+  </script>  <!-- README snippet for GitHub publish: -->  <!--
+    1) Put this folder (index.html + assets/ + css if separate) into a Git repo
+    2) git init; git add .; git commit -m "Initial"
+    3) Create a GitHub repo and push
+    4) In GitHub: Settings -> Pages -> select branch 'main' and root /
+    5) Your site will publish at https://<your-username>.github.io/<repo>/
+
+    Optional: If files are large, host videos on Vimeo (unlisted) and replace <video> sources with embed iframes.
+  --></body>
 </html>
